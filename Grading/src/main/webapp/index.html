@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Assignment And Grading System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f3e5f5; /* Background color */
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 60px 40px; /* Adjusted padding */
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px; /* Increased max-width for a longer appearance */
+            animation: float 3s ease-in-out infinite; /* Floating animation */
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translatey(0px);
+            }
+            50% {
+                transform: translatey(-10px); /* Move up */
+            }
+        }
+
+        h1 {
+            font-size: 36px; /* Increased font size */
+            color: #e91e63; /* Pink color for the title */
+            margin-bottom: 20px;
+            text-align: center; /* Center align title */
+            letter-spacing: 1px; /* Slightly increased spacing between letters */
+        }
+
+        p {
+            font-size: 16px; /* Decreased font size */
+            color: #555;
+            margin-bottom: 40px;
+            text-align: justify; /* Justify text for better readability */
+        }
+
+        .btn {
+            display: block; /* Change to block to stack vertically */
+            padding: 20px; /* Increased padding for longer buttons */
+            font-size: 18px;
+            color: white;
+            background-color: #673ab7; /* Purple theme */
+            text-decoration: none;
+            border-radius: 8px;
+            margin: 10px 0; /* Add margin for vertical spacing */
+            width: 100%; /* Full width for buttons */
+            transition: all 0.3s ease;
+            text-align: center; /* Center align button text */
+        }
+
+        .btn:hover {
+            background-color: #512da8; /* Darker purple on hover */
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .btn {
+                font-size: 16px;
+                padding: 15px; /* Slightly less padding for smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            .btn {
+                font-size: 14px;
+                padding: 12px; /* Slightly less padding for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Online Assignment And Grading System</h1>
+        <p>Welcome to the Online Assignment and Grading System. Please login or sign up to continue.</p>
+
+        <!-- Buttons for navigation -->
+        <a href="register.html" class="btn">Sign Up</a>
+        <a href="login.html" class="btn">Log In</a>
+    </div>
+
+</body>
+</html>

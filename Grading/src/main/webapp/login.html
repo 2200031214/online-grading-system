@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Assignment and Grading System - Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f3e5f5; /* Background from home page */
+        }
+
+        @keyframes floating {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 60px 40px; /* Adjusted padding */
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px; /* Increased max-width for a longer appearance */
+            animation: floating 3s ease-in-out infinite; /* Floating animation */
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            border-color: #673ab7; /* Focus color for input fields */
+            outline: none;
+            box-shadow: 0 0 5px rgba(103, 58, 183, 0.5);
+        }
+
+        button {
+            width: 100%;
+            padding: 20px; /* Increased padding for buttons */
+            font-size: 18px;
+            color: white;
+            background-color: #673ab7; /* Purple theme from home page */
+            border: none;
+            border-radius: 8px;
+            margin: 10px 0; /* Add margin for vertical spacing */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #512da8; /* Darker shade on hover */
+        }
+
+        footer {
+            background-color: #512da8; /* Footer color */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            font-size: 14px;
+        }
+
+        .error-message {
+            color: red;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            button {
+                font-size: 16px;
+                padding: 15px; /* Slightly less padding for smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 12px; /* Slightly less padding for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Login to Your Account</h1>
+        <div class="error-message" id="error-message"></div> <!-- For displaying errors -->
+        <form id="login-form">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <input type="password" name="password" placeholder="Enter your password" required>
+            <select name="role" required>
+                <option value="">Select Role</option>
+                <option value="admin">Admin</option>
+                <option value="teacher">Teacher</option>
+                <option value="student">Student</option>
+            </select>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="register.html">Register here</a></p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Online Assignment and Grading System</p>
+    </footer>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent the form from submitting immediately
+
+            var role = document.querySelector('select[name="role"]').value;
+            var errorMessage = document.getElementById('error-message');
+
+            // Clear previous error messages
+            errorMessage.innerHTML = '';
+
+            if (!role) {
+                errorMessage.innerHTML = 'Please select a role.';  // Display error if no role is selected
+                return;
+            }
+
+            // Redirect based on the selected role
+            switch(role) {
+                case 'admin':
+                    window.location.href = 'admin.jsp';  // Ensure this page exists
+                    break;
+                case 'student':
+                    window.location.href = 'student.jsp';  // Ensure this page exists
+                    break;
+                case 'teacher':
+                    window.location.href = 'teacher.jsp';  // Ensure this page exists
+                    break;
+                default:
+                    alert('Invalid role selected.');  // Just in case something unexpected happens
+            }
+        });
+    </script>
+</body>
+</html>
